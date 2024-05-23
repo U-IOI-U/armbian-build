@@ -1,6 +1,8 @@
 #!/bin/bash
 
-PATCHES="${1:-meson64-current}"
+DEVICES="${1:-meson64-current}"
+KVERSION="${2:-v6.6.31}"
+PATCHES="archive/"$(echo $DEVICES | cut -d "-" -f 1)-$(echo $KVERSION | grep -o -E "[0-9]+\.[0-9]+")
 for folder in "../armbian-build/patch/kernel/$PATCHES/" "../userpatches/kernel/$PATCHES/"; do
     ERR_PATCH=""
     for i in `ls $folder 2>/dev/null`; do
