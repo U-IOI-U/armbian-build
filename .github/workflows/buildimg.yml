@@ -23,7 +23,7 @@ on:
         type: string
       branch:
         description: 'armbian build branch'
-        default: 'v24.08'
+        default: 'v24.11'
         required: true
         type: string
       userkpatch:
